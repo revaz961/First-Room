@@ -1,4 +1,4 @@
-package com.example.firstroom
+package com.example.firstroom.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,6 +9,8 @@ import android.widget.EditText
 import androidx.core.view.children
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.example.firstroom.model.MainViewModel
+import com.example.firstroom.R
 import com.example.firstroom.databinding.FragmentMainBinding
 import com.google.android.material.snackbar.Snackbar
 

@@ -1,6 +1,7 @@
-package com.example.firstroom
+package com.example.firstroom.database
 
 import androidx.room.Room
+import com.example.firstroom.App
 
 object UserDatabase {
     val db = Room.databaseBuilder(

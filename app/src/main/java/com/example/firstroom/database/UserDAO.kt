@@ -1,7 +1,6 @@
-package com.example.firstroom
+package com.example.firstroom.database
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert

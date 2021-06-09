@@ -1,13 +1,12 @@
-package com.example.firstroom
+package com.example.firstroom.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.firstroom.databinding.FragmentUsersBinding
+import com.example.firstroom.database.User
 import com.example.firstroom.databinding.UserLayoutBinding
 
-class UserAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class UserAdapter(val delete: (User) -> Unit) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private var users = mutableListOf<User>()
     fun setUsers(list: List<User>) {
         users.clear()
@@ -33,7 +32,8 @@ class UserAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun getItemCount() = users.size
 
-    inner class UserViewHolder(val binding: UserLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class UserViewHolder(val binding: UserLayoutBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind() {
             binding.firstName.text = users[adapterPosition].firstName
             binding.lastName.text = users[adapterPosition].lastName
@@ -41,6 +41,9 @@ class UserAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             binding.address.text = users[adapterPosition].address
             binding.height.text = users[adapterPosition].height.toString()
             binding.profile.text = users[adapterPosition].profile
+            binding.btnRemove.setOnClickListener {
+                delete(users[adapterPosition])
+            }
         }
     }
 }
