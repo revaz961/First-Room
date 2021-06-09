@@ -4,7 +4,6 @@ import android.app.Dialog
 import android.os.Build
 import android.os.Bundle
 import android.util.DisplayMetrics
-import android.util.Log.d
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -42,7 +41,7 @@ class UsersFragment : Fragment() {
         adapter = UserAdapter { user ->
             val dialog = Dialog(requireContext())
             val dialogBinding = DialogLayoutBinding.inflate(layoutInflater)
-            dialog.init<DialogLayoutBinding>(dialogBinding.root)
+            dialog.init(dialogBinding.root)
             dialogBinding.btnYes.setOnClickListener {
                 userviewModel.delete(user)
                 dialog.cancel()

@@ -6,7 +6,7 @@ import android.view.Window
 import android.view.WindowManager
 import androidx.viewbinding.ViewBinding
 
-fun <T:ViewBinding>Dialog.init(
+fun Dialog.init(
     view: View,
     height: Int = WindowManager.LayoutParams.MATCH_PARENT,
     Width: Int = WindowManager.LayoutParams.WRAP_CONTENT
